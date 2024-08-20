@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qy0wdhnenln7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8m2v"]
+
+[node name="Wall" type="StaticBody2D"]
+metadata/Color = Color(0, 0, 0, 1)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d8m2v")
