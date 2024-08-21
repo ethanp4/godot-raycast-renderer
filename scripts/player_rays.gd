@@ -2,8 +2,8 @@
 extends Node2D
 
 var no_rays : float = 100.
-var fov : float = 250.
-var angular_fov : float = 20.
+var fov : float = 200.
+var angular_fov : float = 10.
 var target_pos : Vector2i = Vector2(0,1000)
 var rays : Array[RayCast2D]
 var resolution : Vector2i = Vector2i(1152,648)

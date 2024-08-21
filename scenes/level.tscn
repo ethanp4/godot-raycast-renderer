@@ -12,6 +12,9 @@ visible = false
 position = Vector2(637, 379)
 rotation = 4.70883
 
+[node name="View" type="Node2D" parent="."]
+script = ExtResource("2_3sq7w")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -23,16 +26,13 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 0
 offset_right = 481.0
-offset_bottom = 40.0
+offset_bottom = 148.0
 
 [node name="fps" type="RichTextLabel" parent="Control"]
 layout_mode = 0
 offset_left = 592.0
 offset_right = 632.0
 offset_bottom = 40.0
-
-[node name="View" type="Node2D" parent="."]
-script = ExtResource("2_3sq7w")
 
 [node name="Wall" parent="." instance=ExtResource("3_w7ths")]
 position = Vector2(592, 6)
@@ -84,3 +84,29 @@ scale = Vector2(38.92, 1)
 [node name="Wall11" parent="." instance=ExtResource("3_w7ths")]
 position = Vector2(1622, 548)
 scale = Vector2(50.0994, -1.32361)
+
+[node name="Wall12" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(1953, 117)
+scale = Vector2(1.79843, 13.4448)
+
+[node name="Wall13" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(2179, -14)
+scale = Vector2(22.64, 1)
+
+[node name="Wall14" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(2608, 134)
+rotation = 0.597364
+scale = Vector2(27.0668, 1)
+
+[node name="Wall15" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(2843, 482)
+scale = Vector2(1, 21.32)
+
+[node name="Wall16" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(2530, 686)
+scale = Vector2(32.04, 1)
+
+[node name="Wall17" parent="." instance=ExtResource("3_w7ths")]
+position = Vector2(2180, 616)
+rotation = 0.703004
+scale = Vector2(10.0658, 1)

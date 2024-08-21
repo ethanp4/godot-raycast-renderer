@@ -11,15 +11,24 @@ func _draw() -> void:
 		var dist = 0
 		var height = 0
 		if ray.is_colliding():
+			color = ray.get_collider().get_meta("Color")
 			dist = rays.global_position.distance_to(ray.get_collision_point())
 			var t = dist / rays.target_pos.y
-			color = ray.get_collider().get_meta("Color")
 			#print(ray.get_collider())
 			
+			#scaling should be exponential, not linear
 			height = lerpf(rays.resolution.y, 0, t)
+			var A = rays.resolution.y
+			var B = 0
+			var y = t
+			height = A+(B-A)*y
+			#height = A+(B-A)*log(y+0.11)-619
+			if x == rays.no_rays / 2:
+				$"../Control/RichTextLabel".text = "stats for ray %d:\n%s -> height: %s" % [x, t, height]
+				color = Color(0,255,0)
 		var line_y = (rays.resolution.y - height)/2
 		
-		$"../Control/RichTextLabel".text = "height: %s, line_y: %s" % [height, line_y]
+		#$"../Control/RichTextLabel".text = "height: %s, line_y: %s" % [height, line_y]
 		#var line_y = rays.resolution.y / 2
 		if color != null: # if color is null then just dont draw a line
 			draw_line(Vector2(line_x, line_y), Vector2(line_x, line_y+height), color, line_width, false)

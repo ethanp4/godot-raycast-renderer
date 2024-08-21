@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
 const JUMP_VELOCITY = 4.5
+var walk_speed = 300.0
+var run_speed = 600.0
+var speed 
 
 var mouse_sens : float = 0.001
 
@@ -19,11 +21,16 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "backward", "forward").rotated($".".rotation)
-	if input_dir:
-		velocity.x = SPEED * input_dir.x
-		velocity.y = SPEED * input_dir.y
+	if Input.is_action_pressed("sprint"):
+		speed = run_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		speed = walk_speed
+		
+	if input_dir:
+		velocity.x = speed * input_dir.x
+		velocity.y = speed * input_dir.y
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 
 	move_and_slide()
