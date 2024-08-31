@@ -4,12 +4,12 @@ extends Node2D
 var no_rays : float = 100.
 
 #this is how much rays are translated left to right as they are instantiated
-var fov : float = 0.
+var fov : float = 200.
 #this is how much rays are rotated as they are instantiated 
-var angular_fov : float = 70.
+var angular_fov : float = 0.
 #it doesnt look quite right but it works
 
-var target_pos : Vector2i = Vector2(0,1000)
+var target_pos : Vector2i = Vector2(0,4000)
 var rays : Array[RayCast2D]
 var resolution : Vector2i = Vector2i(1152,648)
 

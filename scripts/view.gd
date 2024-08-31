@@ -13,15 +13,18 @@ func _draw() -> void:
 		if ray.is_colliding():
 			color = ray.get_collider().get_meta("Color")
 			dist = rays.global_position.distance_to(ray.get_collision_point())
+			
+			#the problem area
 			var t = dist / rays.target_pos.y
+			t = sqrt(dist / 2000)
 			#print(ray.get_collider())
 			
-			#scaling should be exponential, not linear
 			height = lerpf(rays.resolution.y, 0, t)
-			var A = rays.resolution.y
-			var B = 0
-			var y = t
-			height = A+(B-A)*y
+			height = clamp(height, 10, rays.resolution.y)
+			#var A = rays.resolution.y
+			#var B = 0
+			#var y = t
+			#height = A+(B-A)*y
 			#height = A+(B-A)*log(y+0.11)-619
 			if x == rays.no_rays / 2:
 				$"../Control/RichTextLabel".text = "stats for ray %d:\n%s -> height: %s" % [x, t, height]

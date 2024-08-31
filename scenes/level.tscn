@@ -8,7 +8,6 @@
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ugkgs")]
-visible = false
 position = Vector2(637, 379)
 rotation = 4.70883
 

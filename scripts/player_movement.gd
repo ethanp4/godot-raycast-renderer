@@ -4,7 +4,7 @@ var walk_speed = 300.0
 var run_speed = 600.0
 var speed 
 
-var mouse_sens : float = 0.001
+var mouse_sens : float = 0.0005
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
