@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cg3t7xe71jr0d" path="res://scenes/player.tscn" id="1_ugkgs"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_3sq7w"]
-[ext_resource type="Script" path="res://scripts/control.gd" id="2_d1tfh"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="2_d1tfh"]
 [ext_resource type="PackedScene" uid="uid://qy0wdhnenln7" path="res://scenes/wall.tscn" id="3_w7ths"]
 
 [node name="Level" type="Node2D"]

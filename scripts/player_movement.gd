@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = 4.5
 var walk_speed = 300.0
 var run_speed = 600.0
 var speed 
@@ -25,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		speed = run_speed
 	else:
 		speed = walk_speed
-		
 	if input_dir:
 		velocity.x = speed * input_dir.x
 		velocity.y = speed * input_dir.y
